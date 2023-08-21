@@ -1,17 +1,12 @@
+const express = require("express");
 
-const express=require('express');
+const { postMessage, getMessage } = require("../container/post.container");
 
-const app=express();
+const app = express();
 
-const postRouter=express.Router();
+const postRouter = express.Router();
 
+postRouter.get("/", getMessage);
+postRouter.post("/", postMessage);
 
-postRouter.get('/',(req,res)=>{
-  res.send('Post route works');
-})
-
-/*postRouter.post('/',(req,res)=>{
-  res.send('Post route works');
-})*/
-
-module.exports=postRouter;
+module.exports = postRouter;
