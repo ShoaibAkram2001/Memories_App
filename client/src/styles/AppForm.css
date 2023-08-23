@@ -1,0 +1,51 @@
+
+
+
+.AppForm_Container{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    height: 550px;
+    margin-right: 60px;
+    padding-top: 10px ;
+  
+}
+
+.AppForm_Container>form{
+    display: flex;
+   justify-content: center;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.AppForm_Container>form>.btn{
+    width: 100%;
+}
+.AppForm_Container>form>.submit{
+background-color: blueviolet;
+color:white;
+
+}
+.AppForm_Container>form>.clear{
+    background-color:yellowgreen;
+    color:white;
+
+    
+    }
+
+.AppForm_Container>form>input{
+    padding: 15px;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.AppForm_Container>form>.message{
+
+    height: 100px;
+    text-align: left;
+    padding-top: 0px;
+   
+}
+
