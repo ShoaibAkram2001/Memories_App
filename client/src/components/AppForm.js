@@ -30,4 +30,4 @@ function AppForm() {
   )
 }
 
-export default AppForm
+export default AppForm;

@@ -1,12 +1,20 @@
-const mongoose=require('mongoose');
 const express=require('express');
-const cors=require('cors');
+const cors= require('cors');
 const postRouter=require('./routes/posts.route');
+const mongoose=require('mongoose');
 
 const PORT= process.env.PORT||5000;
 const MONGO_URL='mongodb+srv://shoaib:shoaib123@cluster0.6grzftm.mongodb.net/?retryWrites=true&w=majority'
 
 const app =express();
+
+
+
+app.use(cors());
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
+
+// Parse application/json
 
 
 
