@@ -1,2 +1,2 @@
-# Memorize_App
+# Memories_App
 App to post events
