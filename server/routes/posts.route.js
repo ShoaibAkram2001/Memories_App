@@ -7,6 +7,7 @@ const app = express();
 const postRouter = express.Router();
 
 postRouter.get("/", getMessage);
-postRouter.post("/", postMessage);
+postRouter.post("/", postMessage
+);
 
 module.exports = postRouter;

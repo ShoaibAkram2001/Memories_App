@@ -1,23 +1,24 @@
+
+const morgan=require('morgan');
 const express=require('express');
 const cors= require('cors');
+const bodyParser=require('body-parser');
+
 const postRouter=require('./routes/posts.route');
 const mongoose=require('mongoose');
 
 const PORT= process.env.PORT||5000;
-const MONGO_URL='mongodb+srv://shoaib:shoaib123@cluster0.6grzftm.mongodb.net/?retryWrites=true&w=majority'
-
+const MONGO_URL='mongodb+srv://shoaib:AtmKzHPLdENHlpah@memories.nz3dvxh.mongodb.net/?retryWrites=true&w=majority'
+//AtmKzHPLdENHlpah
 const app =express();
 
 
+app.use(morgan('combined'));
+app.use(cors({
+  origin: 'http://localhost:3000', // Allow requests from this origin
+}));
 
-app.use(cors());
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
-
-// Parse application/json
-
-
-
+app.use(express.json());
 app.use('/posts',postRouter);
 
 mongoose.connection.once('open', () => {

@@ -5,13 +5,12 @@
    justify-content: center;
    /*margin-top: 20px;*/
    margin:20px 100px 0px 100px;
-   border: 2px solid black;
+
    padding-top: 0rem;
    height: 100%;
 }
 
-.PostContainer{
+.PostsContainer{
     margin-right: 300px;
-
 }
 
