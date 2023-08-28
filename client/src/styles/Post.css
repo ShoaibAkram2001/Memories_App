@@ -5,7 +5,7 @@
     height: 480px;
     margin-right:50px;
     border: 2px solid  black;
-    
+    margin: 5px 50px 5px 0px;
     border-radius: 10px 10px 5px 5px;
 }
 
@@ -63,33 +63,39 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    >.MuiIconButton-root >.MuiSvgIcon-root {
-        color: blue;
-      }
-      >p{
-        font-weight: bold;
-        font-size: medium;
-        color:gray;
-    }     
+    >.MuiIconButton-root
+    {
+        >.MuiSvgIcon-root {
+        color: blue;   
+          }
+          >p{
+            margin-left: 5px;
+            font-size: 20px;
+            color:blue;
+        }  
+
+    }
+      
 
 }
-
 >.delete_btn_container{
     display: flex;
     align-items: center;
     justify-content: space-around;
->.MuiIconButton-root >.MuiSvgIcon-root {
-    color: blue;
-  }
+    >.MuiIconButton-root
+    {
+        >.MuiSvgIcon-root {
+        color: blue;   
+          }
+          >p{
+            margin-left: 5px;
+            font-size: 20px;
+            color:blue;
+        }  
 
->p{
-    font-weight: bold;
-    font-size: medium;
-    color:gray;
+    }
+      
 }
-
-}
-
 
 
 }

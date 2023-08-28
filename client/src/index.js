@@ -1,20 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import postReducer from './postReducer';
+import rootReducer from './postReducer';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { combineReducers } from 'redux';
 import { applyMiddleware, compose } from 'redux';
 import App from './App';
-
 import {createStore} from 'redux';
-
-
-
-
-
 import reportWebVitals from './reportWebVitals';
-const store=createStore(postReducer,compose(applyMiddleware(thunk)))
+
+
+const store=createStore(rootReducer,compose(applyMiddleware(thunk)))
 
 //store={store}
 const root = ReactDOM.createRoot(document.getElementById('root'));
