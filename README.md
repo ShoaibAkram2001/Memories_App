@@ -1,2 +1,2 @@
 # Memories_App
-Full Stack App to post events
+ Full Stack App to post events
