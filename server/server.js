@@ -2,14 +2,14 @@
 const morgan=require('morgan');
 const express=require('express');
 const cors= require('cors');
+const dotenv=require('dotenv')
 const bodyParser=require('body-parser');
-
 const postRouter=require('./routes/posts.route');
 const mongoose=require('mongoose');
+dotenv.config();
+const PORT= process.env.PORT;
 
-const PORT= process.env.PORT||5000;
-const MONGO_URL='mongodb+srv://shoaib:AtmKzHPLdENHlpah@memories.nz3dvxh.mongodb.net/?retryWrites=true&w=majority'
-//AtmKzHPLdENHlpah
+
 const app =express();
 
 
@@ -28,6 +28,6 @@ mongoose.connection.once('open', () => {
     console.log('Connection error with mongodb');
   });
 
-mongoose.connect(MONGO_URL).then(()=>app.listen(PORT,()=>{
+mongoose.connect(process.env.MONGO_URL).then(()=>app.listen(PORT,()=>{
     console.log(`Server is listening on PORT ${PORT}`);
 }))

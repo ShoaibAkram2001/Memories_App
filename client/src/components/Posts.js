@@ -16,7 +16,7 @@ const Posts=({setCurrentId})=>{
   return (
     <div className="posts_container">
      {posts?.map((post) => (
-      <Post post={post} setCurrentId={setCurrentId} />
+      <Post post={post} key={post._id}setCurrentId={setCurrentId} />
      ))}
       
  </div>

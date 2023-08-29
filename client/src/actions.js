@@ -5,7 +5,7 @@ import { FETCH_ALL, CREATE, UPDATE,LIKE,DELETE } from "./actionTypes";
 
 export const getPosts = () => async (dispatch) => {
   try {
-    const { data } = await api.fetch_posts();
+    const  {data}  = await api.fetch_posts();
     console.log("All fetch data :", data);
 
     dispatch({ type: FETCH_ALL, payload: data });
@@ -61,8 +61,8 @@ export const deletePost=(id)=>async(dispatch)=>{
 
 export const likePost=(id)=>async(dispatch)=>{
   try {
-    const { data } = await api.like_post(id);
-    console.log("After like :",data);
+    const  data  = await api.like_post(id);
+    console.log("After like :",);
     dispatch({ type: LIKE, payload: data });
   } catch (error) {
     console.log(error.message);

@@ -15,6 +15,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: -280px;
+    position:sticky;
     
     >.Post_Image_Text{
         color:white;

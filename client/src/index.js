@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import rootReducer from './postReducer';
+import rootReducer from './reducers/postReducer';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { combineReducers } from 'redux';
@@ -16,12 +16,10 @@ const store=createStore(rootReducer,compose(applyMiddleware(thunk)))
 //store={store}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
    <Provider store={store} >
    <App />
    </Provider>
 
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
