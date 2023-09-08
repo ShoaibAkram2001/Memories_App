@@ -5,6 +5,7 @@ const cors= require('cors');
 const dotenv=require('dotenv')
 const bodyParser=require('body-parser');
 const postRouter=require('./routes/posts.route');
+const userRouter=require('./routes/user.route');
 const mongoose=require('mongoose');
 dotenv.config();
 const PORT= process.env.PORT;
@@ -20,6 +21,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use('/posts',postRouter);
+app.use('/users',userRouter)
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');

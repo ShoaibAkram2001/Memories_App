@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import rootReducer from './reducers/postReducer';
+import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { combineReducers } from 'redux';
 import { applyMiddleware, compose } from 'redux';
 import App from './App';
 import {createStore} from 'redux';
@@ -16,9 +15,11 @@ const store=createStore(rootReducer,compose(applyMiddleware(thunk)))
 //store={store}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-   <Provider store={store} >
+  <React.StrictMode>
+  <Provider store={store} >
    <App />
    </Provider>
+  </React.StrictMode>
 
 );
 

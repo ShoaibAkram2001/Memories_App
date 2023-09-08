@@ -1,5 +1,5 @@
 const {mongoose}=require('mongoose');
-const Post=require('../model/post.modal');
+const Post=require('../model/post.model');
 const {ObjectId}=require('mongodb');
 
 
@@ -90,13 +90,26 @@ async function likePost(req,res){
 
   const {title, message, creator, selectedFile, tags}=req.body;
 
+  if(!req.userId)return res.json({message:'Unauthenticated user !.'});
+  
+
   if(!ObjectId.isValid(id))
   {return res.status(404).json({message:"No post found with this id",});
   }
 
   const post = await Post.findById(id);
-  
-   const updatedPost = await Post.findByIdAndUpdate(id, { likeCount: post?.likeCount + 1 }, { new: true });
+
+  const index=await post.findIndex((id)=>id===String(req.userId));
+
+  if(index==-1){
+    //like the post
+   post.likes.push(req.userId)
+  }
+  else{
+    //deslike the post
+  post.likes=post.likes.filter((id)=>id!==String(req.userId))
+  }
+   const updatedPost = await Post.findByIdAndUpdate(id, post, { new: true });
   
   res.json(updatedPost);
 }

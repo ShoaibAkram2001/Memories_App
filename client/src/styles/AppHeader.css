@@ -1,22 +1,71 @@
 
 .AppHeader{
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
     background-color: white;
+    width: 70%;
     border: 1px solid white;
-    margin-top: 20px;
-    margin:20px 300px 10px 300px;
+    margin:20px 0px 10px 300px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  padding:5px 0px 5px 0px;
+  padding:10px 20px 10px 20px;
   align-items: center;
 }
 
-.AppHeader >h2{
+.AppHeader>.left_header >h2{
     margin-right: 10px;
     color: rgb(127, 78, 173);
 }
 
-.AppHeader >img{
+.AppHeader>.left_header >img{
    width:50px ;
    height: inherit;
+}
+
+.AppHeader>.left_header {
+   display: flex;
+
+}
+
+.AppHeader > .right_header >.Profile{
+   display: flex;
+  align-items: center;
+   >h2{
+      margin-left: 20px;
+   }
+   >.MuiIconButton-root{
+      margin-left: 20px;
+   }
+
+   >.MuiAvatar-root{
+      cursor: pointer;
+      background-color: gray;
+      width: 60px;
+      height: 60px;
+   }
+}
+
+.right_header> .MuiIconButton-root{
+   color:white;
+   background-color: blueviolet;
+   font-size: 18px;
+   
+
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+   width: 100px;
+   padding: 10px;
+
+
+}
+
+.right_header>.Profile> .MuiIconButton-root{
+   color:white;
+   background-color: blueviolet;
+   font-size: large;
+   border-radius: 4px ;
+   width: 100px;
+   padding: 8px;
+
 }

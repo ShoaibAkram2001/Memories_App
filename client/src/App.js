@@ -1,28 +1,29 @@
+import AppHeader from "./components/AppHeader";
+import AppContent from "./components/AppContent";
+import { useState, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import "./App.css";
+import { getPosts } from "./actions/postAction";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import Auth from "./components/Auth";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
-import AppHeader from './components/AppHeader';
-import AppContent from './components/AppContent';
-import { useState,useEffect } from 'react';
-import './App.css';
-import { getPosts } from './actions';
-import { useDispatch, useSelector } from 'react-redux';
-
-
-
-const App=()=> {
-  const [currentId, setCurrentId] = useState(0);
-  const dispatch = useDispatch();
-  const posts=useSelector((state)=>state.posts);
-  console.log(posts);
-   useEffect(()=>{
-   dispatch(getPosts()); 
-},[currentId,dispatch]);
+const App = () => {
   return (
-    <div className="App">
-     <AppHeader/>
-     <AppContent currentId={currentId} setCurrentId={setCurrentId}/>
+    //<GoogleOAuthProvider clientId="429708968029-006d7flsvdinml1vab7csvu6bvkmdh95.apps.googleusercontent.com">
+      <BrowserRouter>
+        <div className="App">
+          <AppHeader />
 
-    </div>
+          <Routes>
+            <Route path="/" Component={AppContent} />
+            <Route path="/auth" Component={Auth} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    //</GoogleOAuthProvider>
   );
-}
+};
 
 export default App;

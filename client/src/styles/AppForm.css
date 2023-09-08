@@ -7,10 +7,11 @@
     flex-direction: column;
     border: 1px solid black;
     align-items: center;
-    height: 550px;
+    height: 530px;
     margin-right: -90px;
     padding-top: 10px ;
     width: 300px;
+    border:1px solid gray;
   
 }
 
@@ -19,6 +20,7 @@
    justify-content: center;
     flex-direction: column;
     padding-bottom: 50px;
+
 }
 
 .AppForm_Container>form>.btn{
@@ -40,6 +42,7 @@ color:white;
     padding: 15px;
     margin: 5px;
     font-size: 15px;
+    border: 1px solid gray;
 }
 
 .AppForm_Container>form>.message{

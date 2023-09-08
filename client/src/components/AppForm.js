@@ -1,14 +1,14 @@
 import React, { useState,useEffect } from 'react';
 import '../styles/AppForm.css'
 import { useDispatch,useSelector } from 'react-redux';
-import {createPost, updatePost} from '../actions';
+import {createPost, updatePost} from '../actions/postAction';
 import FileBase from 'react-file-base64';
 
 
 
 const AppForm=({currentId,setCurrentId})=>
 {
-  const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
+  const post = useSelector((state) => (currentId ? state.find((message) => message._id === currentId) : null));
   const dispatch = useDispatch();
 
   
@@ -78,7 +78,7 @@ clear();
 
         <input className='submit btn'type='submit' value={'Submit'} onClick={handleSubmit}/>
         <input className='clear btn'type='reset' onClick={clear} value={'Clear'} />
-    </form>*
+    </form>
     </div>
   )
 }
