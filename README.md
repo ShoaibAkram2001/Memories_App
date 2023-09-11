@@ -1,2 +1,3 @@
-# Memories_App
- Full Stack App to post events
+
+# Memories
+![Memories](../Memories_Project/client/src/images/screenshot.png)
