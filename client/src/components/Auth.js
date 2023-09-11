@@ -30,8 +30,12 @@ function Auth() {
      if(isSignUp)
      {
      dispatch(signup(authData,navigate));
+      
+     }
+     else{
       dispatch(signin(authData,navigate));
      }
+     
   };
 
   const handleChange = (e) => {
@@ -42,10 +46,7 @@ function Auth() {
 
   const googleSuccess = async (res) => {
     const token = res?.sub;
-    const result = {
-      name: res?.name,
-      imageUrl: res?.picture,
-    };
+    const result = res;
     const data = { result, token };
    // console.log("data", data);
 
@@ -80,6 +81,7 @@ function Auth() {
               type="text"
               placeholder="First Name"
               onChange={handleChange}
+              
             />
             <input
               name="lastName"
@@ -100,6 +102,7 @@ function Auth() {
           name="password"
           type="password"
           placeholder="Password"
+          autoComplete={"on"}      
           onChange={handleChange}
         />
 
@@ -109,6 +112,7 @@ function Auth() {
               name="confirmPassword"
               type="password"
               placeholder="Confirm Password"
+              autoComplete={"on"}
               onChange={handleChange}
             />
 

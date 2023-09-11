@@ -12,12 +12,11 @@ const navigate=useNavigate();
 const dispatch=useDispatch();
 const location=useLocation();
 
+console.log("user :",user);
 //console.log(JSON.parse(localStorage.getItem('profile')))
   const handleLogout=()=>{
-
    dispatch({type:'LOGOUT'})
     navigate('/Auth');
-
     setUser(null);
   }
 

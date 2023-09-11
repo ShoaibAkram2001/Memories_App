@@ -12,6 +12,7 @@ export const signup=(authData,navigate)=>async(dispatch)=>{
     try {
         const{ data }=await api.signUp(authData);
         dispatch({type: AUTH,data});
+        navigate('/');
     } catch (error) {
         console.log(error);
     }
@@ -21,8 +22,8 @@ export const signup=(authData,navigate)=>async(dispatch)=>{
 export const signin=(authData,navigate)=>async(dispatch)=>{
     try {
       const{ data }=await api.signIn(authData);
-
         dispatch({type: AUTH,data});
+        navigate('/');
     } catch (error) {
         console.log(error);
     }

@@ -6,8 +6,8 @@ const messageSchema = mongoose.Schema({
   creator: String,
   tags: [String],
   selectedFile: String,
- likes: {
-    type:[String],
+ likeCount: {
+    type:Number,
     default: 0,
   },
   createdAt: {

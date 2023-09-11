@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const secretKey = "test";
 
-const User = require("../model/user.model");
+const User = require("../models/user.model");
 
 async function signin(req, res) {
   try {
